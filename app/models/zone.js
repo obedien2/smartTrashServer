@@ -1,5 +1,7 @@
 let mongoose = require('mongoose');
+var databaseConfig = require('../../config/database')
 
+mongoose.connect(databaseConfig.url)
 let schema = mongoose.Schema;
 
 let zone = {

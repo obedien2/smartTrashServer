@@ -26,27 +26,26 @@ app.use(cors());
 router(app);
 
 //bob added this code
-router1.get('/heybob', (req,res,next)=>{
+router1.get('/heybob', (req, res, next) => {
     res.send('testing bob s')
 });
 
 router1.get("/", function (req, res) {
     //res.json({ "error": false, "message": "Fuck you!" })
-    User.find({},(err,data)=>
-    {
-        if(err){
-        return next(err)
-    }
-    else{ 
-        res.json(data)
-    }
-})
+    User.find({}, (err, data) => {
+        if (err) {
+            return next(err)
+        }
+        else {
+            res.json(data)
+        }
+    })
 })
 
 //Find all users from database
 // app.get("/allUsers",(req,res,next)=>{
 //     res.json({ "error": false, "message": "Fuck you!" })
-    
+
 //     })
 app.use('/', router1)
 
@@ -73,12 +72,12 @@ router1.route('/bins')
         db.latitude = req.body.latitude;
         db.longitude = req.body.longitude;
 
-        db.save(function(err){
+        db.save(function (err) {
 
-            if(err){
-                response={"error": true, "message":"Error fetching the data"}
-            }else {
-                response = {"error": false, "message":"Data added"}
+            if (err) {
+                response = { "error": true, "message": "Error fetching the data" }
+            } else {
+                response = { "error": false, "message": "Data added" }
             }
 
             res.json(response)
@@ -87,5 +86,5 @@ router1.route('/bins')
 
 
 
-    app.listen(process.env.PORT || 30001);
+app.listen(process.env.PORT || 30001);
 console.log("App listening on port 30001");
