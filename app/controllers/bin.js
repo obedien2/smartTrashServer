@@ -17,7 +17,8 @@ exports.createBin = function(req, res, next){
         binId : req.body.binId,
         zoneId: req.body.zoneId,
         longitude: req.body.longitude,
-        latitude: req.body.latitude
+        latitude: req.body.latitude,
+        binLevel: req.body.binLevel
 });
 }
 
