@@ -17,7 +17,7 @@ var binSchema = {
     "latitude":String , //latitudes may have (-) eg. -1.2588, Numbers will only accept positive numbers, with no negatives
     //admin assigns bin to a zone"
     "zoneAssigned": {type:Boolean, default:false},
-    "binLevel": Number
+    "binLevel": String
 
 
 }
